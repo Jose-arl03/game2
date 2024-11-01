@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscaminas - Fácil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--  inicio -->
+    <div id="inicio" class="vista">
+        <h1>Buscaminas</h1>
+        <p>Selecciona el nivel de dificultad:</p>
+        <div class="niveles">
+            <button class="nivel-btn" onclick="iniciarJuego(5, 5, 5)">Fácil</button>
+            <button class="nivel-btn" onclick="iniciarJuego(10, 10, 15)">Medio</button>
+            <button class="nivel-btn" onclick="iniciarJuego(15, 15, 30)">Difícil</button>
+            <button class="nivel-btn" onclick="iniciarJuego(20, 20, 50)">Muy Difícil</button>
+            <button class="nivel-btn" onclick="iniciarJuego(25, 25, 80)">Hardcore</button>
+            <button class="nivel-btn" onclick="iniciarJuego(30, 30, 100)">Leyenda</button>
+            <button class="nivel-btn" id="personalizado-btn" onclick="mostrarFormularioPersonalizado()">Personalizado</button>
+        </div>
+    </div>
+
+    <!-- Tablero  -->
+    <div id="tablero" class="vista" style="display: none;"></div>
+
+    <!-- Modal de configuración personalizada -->
+    <div id="modal-personalizado" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Personaliza tu tablero</h2>
+            <label for="renglones">Renglones (mínimo 5):</label>
+            <input type="number" id="renglones" min="5" value="5"><br><br>
+            <label for="columnas">Columnas (mínimo 5):</label>
+            <input type="number" id="columnas" min="5" value="5"><br><br>
+            <button onclick="iniciarJuegoPersonalizado()">Aceptar</button>
+            <button onclick="cerrarFormularioPersonalizado()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="minesweeper.js"></script>
+</body>
+</html>
